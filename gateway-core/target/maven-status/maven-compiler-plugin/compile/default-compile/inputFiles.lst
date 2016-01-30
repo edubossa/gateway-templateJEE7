@@ -1,9 +1,0 @@
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/Operacao.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/util/XmlParser.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/OperacaoException.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/Transacao.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/ObjectFactory.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/util/JMSProperty.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/Cartao.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/model/Comprador.java
-/home/wallace/projetos/gateway-templateJEE7/gateway-core/src/main/java/br/com/ntk/util/Parser.java
