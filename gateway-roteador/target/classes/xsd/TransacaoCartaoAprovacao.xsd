@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified">
+	<xs:element name="aprovacao">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="transacao" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="transacao">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="usuario" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="token" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="tokenIntencao" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="numeroDocumento" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="desc-venda" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="soft-descriptor" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tipoOperacao" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="autenticar" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tecnologia" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="valorTransacao" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="parcelamentoAdm" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="qtdeParcelas" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="moeda" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="captura" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="cartao" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="comprador" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="versao" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="usuario">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Nome do Usuario para transacao</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="token">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Token do Usuario para transacao</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="tokenIntencao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Token da Intencao de Venda</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="numeroDocumento">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Numero do Documento, Valor dessa tag deve ser
+					enviado pela loja, para controle interno da transacao
+				</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="100" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="desc-venda">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Descrição da venda</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="300" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="soft-descriptor">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Soft descriptor</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[a-zA-Z0-9\s]*"></xs:pattern>
+				<xs:maxLength value="22" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+
+	<xs:element name="tipoOperacao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Código do produto:</xs:documentation>
+				<xs:documentation>1 – Crédito à Vista.</xs:documentation>
+				<xs:documentation>2 – Débito.</xs:documentation>
+				<xs:documentation>3 – Parcelado loja.</xs:documentation>
+				<xs:documentation>4 – Parcelado administradora.</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:integer">
+				<xs:enumeration value="1" />
+				<xs:enumeration value="2" />
+				<xs:enumeration value="3" />
+				<xs:enumeration value="4" />
+				<xs:enumeration value="5" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="autenticar">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Indicador de autorização:</xs:documentation>
+				<xs:documentation>1 – Autorizar só transação autenticada.</xs:documentation>
+				<xs:documentation>2 – Autorizar se autenticada ou não autenticada.</xs:documentation>
+				<xs:documentation>3 – Autorizar sem autenticação.</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="1" />
+				<xs:enumeration value="2" />
+				<xs:enumeration value="3" />
+				<xs:enumeration value="" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="tecnologia">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Código da tecnologia:</xs:documentation>
+				<xs:documentation>1 – Integrado.</xs:documentation>
+				<xs:documentation>2 – Loja.</xs:documentation>
+				<xs:documentation>3 – Direto.</xs:documentation>
+				<xs:documentation>4 – Loja Antigo.</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:integer">
+				<xs:enumeration value="1" />
+				<xs:enumeration value="2" />
+				<xs:enumeration value="3" />
+				<xs:enumeration value="4" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="valorTransacao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Valor da Transacao</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:positiveInteger">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="parcelamentoAdm">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Tipo Parcelamento</xs:documentation>
+				<xs:documentation>S|N</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="S" />
+				<xs:enumeration value="N" />
+				<xs:enumeration value="s" />
+				<xs:enumeration value="n" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="qtdeParcelas">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Quantidade de Parcelas da Transacao
+				</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:integer">
+				<xs:minInclusive value="1" />
+				<xs:maxInclusive value="24" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="moeda">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Moeda que a transacao deve ser feita
+				</xs:documentation>
+				<xs:documentation>986 = Brasil</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:integer">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="captura">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Flag para capturar a transacao automaticamente
+				</xs:documentation>
+				<xs:documentation>S|N</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="S" />
+				<xs:enumeration value="N" />
+				<xs:enumeration value="s" />
+				<xs:enumeration value="n" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+
+	<xs:element name="cartao">
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numeroCartao" minOccurs="1" maxOccurs="1">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Numero do Cartao para transacao, numero do
+								cartao deve conter entre 13 e 19 digitos
+							</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="\d{13,19}"></xs:pattern>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="mesValidade" minOccurs="1" maxOccurs="1">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Mes de validade do cartao</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:int">
+							<xs:pattern value="(0[1-9]|1[012])" />
+						</xs:restriction>
+					</xs:simpleType>
+
+				</xs:element>
+				<xs:element name="anoValidade" minOccurs="1" maxOccurs="1">
+					<!-- <xs:simpleType name="gYear" id="gYear"> <xs:restriction base="xs:anySimpleType"> 
+						<xs:whiteSpace value="collapse" fixed="true"/> </xs:restriction> </xs:simpleType> -->
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Ano de validade do cartao</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:int">
+							<xs:pattern value="\d{4}" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="codigoSeguranca" minOccurs="1"
+					maxOccurs="1">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Codigo de Seguranca do cartao com 3 digitos
+							</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:normalizedString">
+							<xs:pattern value="[0-9]{3,4}" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="bandeira" minOccurs="1" maxOccurs="1">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Bandeira do Cartao</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="3" />
+							<xs:maxLength value="50" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="comprador">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="enderecoIP" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="nomePortadorCartao" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="cpfPortadorCartao" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="dataNascimentoPortadorCartao" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="enderecoIP">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>endereco IP</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0" />
+				<xs:maxLength value="25" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="nomePortadorCartao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Nome Portador do Cartao</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:normalizedString">
+				<xs:minLength value="5" />
+				<xs:maxLength value="50" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cpfPortadorCartao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>CPF Portador do Cartao</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="dataNascimentoPortadorCartao">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Data Nascimento Portador do Cartao
+				</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:simpleType name="S-N_s-n">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S" />
+			<xs:enumeration value="N" />
+			<xs:enumeration value="s" />
+			<xs:enumeration value="n" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

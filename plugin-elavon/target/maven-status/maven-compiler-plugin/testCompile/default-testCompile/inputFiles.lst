@@ -1,0 +1,7 @@
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/PaymentTransactionListTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/DoPaymentCancelTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/DoPaymentTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/PaymentResponseTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/DoPaymentCaptureTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/AuthorizationDetailsTest.java
+/home/wallace/projetos/gateway-templateJEE7/plugin-elavon/src/test/java/br/com/gateway/elavon/DoPaymentInquiryTest.java

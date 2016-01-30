@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cancelamento>
+	<usuario>ntk</usuario>
+	<token>1234</token>
+	<idTransacao>dcb82ff0-fa57-4747-aedc-9a053b806aca</idTransacao>
+	<valorCancelamento>100</valorCancelamento>
+</cancelamento>

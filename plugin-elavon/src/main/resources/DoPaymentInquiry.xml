@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Consulta -->
+<DoPaymentInquiry version="1.1.0" xmlns="http://wsgate.elavon.com.br">
+	<Language>PT-BR</Language>
+	<TransactionID>23434556567612324345</TransactionID>
+	<MerchantDetails>
+		<TerminalID>0019410000000000000001</TerminalID>
+		<RegKey>FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</RegKey>
+	</MerchantDetails>
+</DoPaymentInquiry>

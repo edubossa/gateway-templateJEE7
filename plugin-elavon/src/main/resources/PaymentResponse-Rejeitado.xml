@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PaymentResponse version="1.1.0" xmlns="http://wsgate.elavon.com.br">
+    <Ack>Success</Ack>
+    <TransactionID>23434551232343454656</TransactionID>
+    <StatusCode>3</StatusCode>
+    <MerchantDetails>
+        <TerminalID>0019410000000000000001</TerminalID>
+    </MerchantDetails>
+    <PaymentResponseDetails>
+        <Card>
+            <AuthorizationDetails>
+                <NSUHost>1955392299</NSUHost>
+                <ResponseCode>ND</ResponseCode>
+                <ResponseMessage>Transação Rejeitada</ResponseMessage>
+                <IssuerResponseCode>01</IssuerResponseCode>
+                <CVV2Response>M</CVV2Response>
+                <Amount currencyCode="BRL">0</Amount>
+                <DateTime>2015-08-19T15:23:14-03:00</DateTime>
+            </AuthorizationDetails>
+        </Card>
+    </PaymentResponseDetails>
+</PaymentResponse>

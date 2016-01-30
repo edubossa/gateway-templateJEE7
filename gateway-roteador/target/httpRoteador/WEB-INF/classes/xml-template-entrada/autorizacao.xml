@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autorizacao versao="1.1.2">
+	<usuario>ntk</usuario>
+	<token>1234</token>
+	<numeroDocumento>123456</numeroDocumento>
+	<descricaoVenda>escova</descricaoVenda>
+	<softDescriptor>NTKPAY</softDescriptor>
+	<valorTransacao>1000</valorTransacao>
+	<parcelamentoAdm>N</parcelamentoAdm>
+	<qtdeParcelas>1</qtdeParcelas>
+	<captura>N</captura>
+	<cartao>
+		<numeroCartao>4012001038443335</numeroCartao>
+		<mesValidade>01</mesValidade>
+		<anoValidade>2015</anoValidade>
+		<codigoSeguranca>123</codigoSeguranca>
+		<bandeira>VISA</bandeira>
+	</cartao>
+	<comprador>
+		<nome>Eduardo Wallace</nome>
+		<cpf>12345678909</cpf>
+		<dataNascimento>12061983</dataNascimento>
+	</comprador>
+</autorizacao>

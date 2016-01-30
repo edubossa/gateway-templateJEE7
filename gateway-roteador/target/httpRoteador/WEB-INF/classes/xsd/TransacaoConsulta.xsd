@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+  <xs:element name="aprovacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transacao"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transacao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="usuario" minOccurs="1" maxOccurs="1" />
+        <xs:element ref="token" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="id_transacao" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="versao" />
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element  name="usuario">
+   <xs:simpleType>
+       <xs:annotation>
+        <xs:documentation>Nome do Usuario para transacao</xs:documentation>
+       </xs:annotation>
+	   <xs:restriction base="xs:string">
+	   </xs:restriction>
+	 </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="token">
+    <xs:simpleType>
+       <xs:annotation>
+        <xs:documentation>Token do Usuario para transacao</xs:documentation>
+       </xs:annotation>
+	   <xs:restriction base="xs:string">
+	   </xs:restriction>
+	 </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="id_transacao">
+     <xs:simpleType>
+       <xs:annotation>
+        <xs:documentation>id gerado pelo gateway para identificacao da transacao,o</xs:documentation>
+       </xs:annotation>
+	   <xs:restriction base="xs:string">
+	   </xs:restriction>
+	 </xs:simpleType>
+  </xs:element>
+</xs:schema>
